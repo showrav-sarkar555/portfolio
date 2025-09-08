@@ -1,0 +1,261 @@
+/* Custom CSS styles */
+body {
+    scroll-behavior: smooth;
+}
+
+/* Profile Image Styles */
+#profile-image {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 0 auto 2rem;
+    }
+}
+
+/* Navigation Styles */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    color: #f3f4f6;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #06b6d4; /* Cyan-500 */
+}
+
+/* Removed the underline effect */
+
+/* Navbar Enhancement */
+nav.sticky {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes floatSubtle {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-slow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(6, 182, 212, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #06b6d4;
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-float {
+    animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 10s ease-in-out 1s infinite;
+}
+
+.animate-float-slow {
+    animation: float 12s ease-in-out 2s infinite;
+}
+
+.animate-float-subtle {
+    animation: floatSubtle 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s infinite;
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.typewriter::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 5px;
+    height: 80%;
+    width: 3px;
+    background-color: #06b6d4;
+    animation: blink 0.75s step-end infinite;
+}
+
+/* Project card hover effect */
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Form focus styles */
+input:focus, textarea:focus {
+    border-color: #06b6d4; /* Cyan-500 */
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2); /* Cyan-500 with opacity */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827; /* Gray-900 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #06b6d4; /* Cyan-500 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0891b2; /* Cyan-600 */
+}
+
+/* Skill bar animation */
+.skill-bar {
+    position: relative;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Contact form success/error messages */
+.form-message {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    display: none;
+}
+
+.form-success {
+    background-color: rgba(6, 182, 212, 0.1); /* Cyan-500 with opacity */
+    border: 1px solid #06b6d4; /* Cyan-500 */
+    color: #06b6d4; /* Cyan-500 */
+}
+
+.form-error {
+    background-color: rgba(239, 68, 68, 0.1); /* Red-500 with opacity */
+    border: 1px solid #ef4444; /* Red-500 */
+    color: #ef4444; /* Red-500 */
+}
+
+/* Dark mode styles (already implemented in current theme) */
+.dark-mode {
+    --bg-primary: #000000; /* Black */
+    --bg-secondary: #111827; /* Gray-900 */
+    --text-primary: #f9fafb; /* Gray-50 */
+    --text-secondary: #06b6d4; /* Cyan-500 */
+    --accent: #ef4444; /* Red-500 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    
+    #home h2 {
+        font-size: 1.5rem;
+    }
+}

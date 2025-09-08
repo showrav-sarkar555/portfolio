@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Frontend Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/orb-styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-['Poppins'] text-gray-800">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900 shadow-lg border-b-2 border-cyan-600">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-cyan-400">Showrav Sarkar</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white">Home</a>
+                <a href="#about" class="nav-link text-white">About</a>
+                <a href="#skills" class="nav-link text-white">Skills</a>
+                <a href="#education" class="nav-link text-white">Education</a>
+                <a href="#projects" class="nav-link text-white">Projects</a>
+                <a href="#contact" class="nav-link text-white">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-white">Home</a>
+                <a href="#about" class="nav-link text-white">About</a>
+                <a href="#skills" class="nav-link text-white">Skills</a>
+                <a href="#education" class="nav-link text-white">Education</a>
+                <a href="#projects" class="nav-link text-white">Projects</a>
+                <a href="#contact" class="nav-link text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
+        <!-- Animated background -->
+        <div class="absolute inset-0 bg-black z-0">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute h-40 w-40 rounded-full bg-cyan-400 blur-3xl animate-float top-20 left-1/4"></div>
+                <div class="absolute h-60 w-60 rounded-full bg-red-500 blur-3xl animate-float-delayed top-1/2 right-1/4"></div>
+                <div class="absolute h-40 w-40 rounded-full bg-cyan-600 blur-3xl animate-float-slow bottom-20 left-1/3"></div>
+            </div>
+        </div>
+        
+        <!-- Floating particles -->
+        <div class="particle" style="top: 20%; left: 10%;"></div>
+        <div class="particle" style="top: 30%; left: 80%;"></div>
+        <div class="particle" style="top: 70%; left: 20%;"></div>
+        <div class="particle" style="top: 50%; left: 90%;"></div>
+        <div class="particle" style="top: 60%; left: 40%;"></div>
+        <div class="particle" style="top: 80%; left: 60%;"></div>
+        
+        <div class="container mx-auto px-4 py-20 z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <p class="text-cyan-400 font-medium mb-2 animate-fade-in-up opacity-0" style="animation-delay: 0.2s;">Hello, I'm</p>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white animate-fade-in-up opacity-0 typing-effect" style="animation-delay: 0.4s;">Showrav Sarkar</h1>
+                    <h2 class="text-2xl md:text-3xl text-cyan-300 mb-6 animate-fade-in-up opacity-0" style="animation-delay: 0.6s;">
+                        <span class="typewriter">Frontend Developer</span>
+                    </h2>
+                    <p class="text-gray-300 mb-8 max-w-lg animate-fade-in-up opacity-0" style="animation-delay: 0.8s;">
+                        I'm a passionate Frontend Developer skilled in HTML5, CSS3, TailwindCSS, and learning JavaScript and frameworks. 
+                        I create responsive and beautiful web experiences with a focus on clean, efficient code.
+                    </p>
+                    <div class="flex space-x-4 animate-fade-in-up opacity-0" style="animation-delay: 1s;">
+                        <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-3 rounded-md transition-all duration-300 transform hover:translate-y-1 hover:shadow-lg">Contact Me</a>
+                        <a href="#projects" class="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white px-8 py-3 rounded-md transition-all duration-300 transform hover:translate-y-1 hover:shadow-lg">View My Work</a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center items-center w-full profile-container animate-fade-in opacity-0" style="animation-delay: 0.5s;">
+                    <div class="relative">
+                        <!-- Simple Planet/Star Orbit Animation Container positioned behind the profile pic -->
+                        <div id="orb-container" class="absolute inset-0 -z-10"></div>
+                        
+                        <!-- Profile Picture - Main Focus -->
+                        <div class="relative w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-cyan-400 overflow-hidden shadow-xl mx-auto bg-black z-10">
+                            <img src="assets/images/t8nxro.jpg" alt="Showrav Sarkar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2 text-white"><span class="text-cyan-400">About</span> Me</h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-gray-900 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-cyan-400">My Story</h3>
+                    <p class="text-white mb-4">
+                        I'm a motivated and detail-oriented Web Developer from Uttor Baluchor, Noyabazar, Sylhet with strong skills in HTML5 and CSS3,
+                        capable of building clean, responsive, and user-friendly websites.
+                    </p>
+                    <p class="text-white mb-4">
+                        I'm passionate about writing efficient code, implementing modern design principles, and continuously improving
+                        my technical expertise. I'm hardworking and persistent — I keep solving problems until they are
+                        resolved properly.
+                    </p>
+                    <p class="text-white mb-4">
+                        Currently pursuing my B.Sc. in Computer Science & Engineering at Sylhet Engineering College, Bangladesh (2021 – Present, Expected Graduation: 2027).
+                    </p>
+                    <p class="text-white">
+                        I'm seeking to contribute to a dynamic team and grow as a front-end developer while continuing my education.
+                    </p>
+                </div>
+                <div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                            <i class="fas fa-laptop-code text-4xl text-cyan-400 mb-4"></i>
+                            <h4 class="text-xl font-medium mb-2 text-white">Web Development</h4>
+                            <p class="text-gray-300">Creating responsive and beautiful web interfaces.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                            <i class="fas fa-mobile-alt text-4xl text-cyan-400 mb-4"></i>
+                            <h4 class="text-xl font-medium mb-2 text-white">Responsive Design</h4>
+                            <p class="text-gray-300">Building websites that work on all devices.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                            <i class="fas fa-palette text-4xl text-cyan-400 mb-4"></i>
+                            <h4 class="text-xl font-medium mb-2 text-white">UI Design</h4>
+                            <p class="text-gray-300">Creating visually appealing user interfaces.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                            <i class="fas fa-code text-4xl text-cyan-400 mb-4"></i>
+                            <h4 class="text-xl font-medium mb-2 text-white">Clean Code</h4>
+                            <p class="text-gray-300">Writing maintainable and well-structured code.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2 text-white"><span class="text-cyan-400">My</span> Skills</h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-white">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-white">HTML5</span>
+                                <span class="text-cyan-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-white">CSS3 (Flexbox, Grid, Media Queries)</span>
+                                <span class="text-cyan-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-white">Tailwind CSS / Bootstrap</span>
+                                <span class="text-cyan-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-white">JavaScript (Basic)</span>
+                                <span class="text-cyan-400">50%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-white">Responsive Design</span>
+                                <span class="text-cyan-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-white">Git/GitHub</span>
+                                <span class="text-cyan-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-white">Soft Skills</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-black p-4 rounded-lg shadow-md border border-gray-800">
+                            <i class="fas fa-comments text-2xl text-cyan-400 mb-3"></i>
+                            <h4 class="text-lg font-medium mb-2 text-white">Communication</h4>
+                            <p class="text-gray-300">Clear communication with team members and clients.</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg shadow-md border border-gray-800">
+                            <i class="fas fa-users text-2xl text-cyan-400 mb-3"></i>
+                            <h4 class="text-lg font-medium mb-2 text-white">Teamwork</h4>
+                            <p class="text-gray-300">Collaborating effectively with others on projects.</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg shadow-md border border-gray-800">
+                            <i class="fas fa-lightbulb text-2xl text-cyan-400 mb-3"></i>
+                            <h4 class="text-lg font-medium mb-2 text-white">Problem Solving</h4>
+                            <p class="text-gray-300">Persistence in solving challenges until properly resolved.</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg shadow-md border border-gray-800">
+                            <i class="fas fa-laptop-code text-2xl text-cyan-400 mb-3"></i>
+                            <h4 class="text-lg font-medium mb-2 text-white">Debugging</h4>
+                            <p class="text-gray-300">Identifying and fixing code issues efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2 text-white"><span class="text-cyan-400">Education</span></h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md mb-6 border border-gray-800">
+                    <div class="flex flex-col md:flex-row justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-white">B.Sc. in Computer Science & Engineering</h3>
+                        <span class="text-cyan-400 font-medium">2023 - Present</span>
+                    </div>
+                    <div class="text-gray-300 mb-2">Sylhet Engineering College, Bangladesh</div>
+                    <div class="text-gray-400">Expected Graduation: 2027</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2 text-white"><span class="text-cyan-400">My</span> Projects</h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-4">Here are the projects I've built to practice my HTML, CSS, and JavaScript skills.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 - Food Order -->
+                <div class="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-gray-800">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/images/food.png" alt="Food Order Website" class="w-full h-full object-cover transition duration-300 transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Food Order Website</h3>
+                        <p class="text-gray-300 mb-4">
+                            Developed a responsive food ordering website featuring a dynamic menu, order summary, and interactive cart. 
+                            Utilized HTML5, CSS3, and JavaScript to create a user-friendly interface with smooth animations and form validation.
+                        </p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">HTML5</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">CSS3</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://showrav-sarkar555.github.io/Food-Order/" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/showrav-sarkar555/Food-Order" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Biker-Zone -->
+                <div class="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-gray-800">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/images/bike.png" alt="Biker Zone Website" class="w-full h-full object-cover transition duration-300 transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Biker Zone</h3>
+                        <p class="text-gray-300 mb-4">
+                            Designed and developed a bike showroom website featuring a hero section, product carousel, 
+                            featured bikes, and customer testimonials. Built with HTML5 and CSS3 using Flexbox, Grid, and media queries.
+                        </p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">HTML5</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">CSS3</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">Responsive</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://showrav-sarkar555.github.io/Biker-Zone/" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/showrav-sarkar555/Biker-Zone" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Fitness Website -->
+                <div class="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-gray-800">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/images/fitness.png" alt="Fitness Website" class="w-full h-full object-cover transition duration-300 transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Fitness Website</h3>
+                        <p class="text-gray-300 mb-4">
+                            Created a health and fitness landing page with a BMI calculator, workout statistics, 
+                            video sections, and team profiles. Implemented semantic HTML structure and modern CSS styling.
+                        </p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">HTML5</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">CSS3</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">Animations</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://showrav-sarkar555.github.io/Fitness-website/" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/showrav-sarkar555/Fitness-website" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - Camera Shop -->
+                <div class="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-gray-800">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/images/camera.png" alt="Camera Shop" class="w-full h-full object-cover transition duration-300 transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Camera Shop</h3>
+                        <p class="text-gray-300 mb-4">
+                            Built a product showcase site for cameras and accessories, displaying items with images, 
+                            prices, and clear categorization. Focused on structured layout and responsive design.
+                        </p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">HTML5</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">CSS3</span>
+                            <span class="bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded mr-2 mb-2">E-commerce</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://showrav-sarkar555.github.io/camera-shop/" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/showrav-sarkar555/camera-shop" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2 text-white"><span class="text-cyan-400">Get</span> In Touch</h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-4">Feel free to contact me for any work or suggestions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 p-8 rounded-lg shadow-md border border-gray-800">
+                    <h3 class="text-2xl font-semibold mb-6 text-white">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-700 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-700 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-700 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-700 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold px-6 py-3 rounded-md transition duration-300 w-full">Send Message</button>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-white">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-cyan-400 mt-1">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1 text-white">Location</h4>
+                                <p class="text-gray-300">Uttor Baluchor, Noyabazar, Sylhet</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-cyan-400 mt-1">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1 text-white">Email</h4>
+                                <p class="text-gray-300">sarkar.showrav19@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-cyan-400 mt-1">
+                                <i class="fas fa-phone-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1 text-white">Phone</h4>
+                                <p class="text-gray-300">01888296045</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-medium mb-3 text-white">Social Profiles</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-black w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 hover:bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300 border border-cyan-400">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-black w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-red-600 hover:bg-red-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Showrav Sarkar</h3>
+                    <p class="text-gray-300 mb-4">Frontend Developer specializing in HTML, CSS, and JavaScript.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/showrav-sarkar555" target="_blank" class="text-gray-400 hover:text-cyan-400 transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-cyan-400 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-cyan-400 transition duration-300">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-cyan-400 transition duration-300">Skills</a></li>
+                        <li><a href="#education" class="text-gray-400 hover:text-cyan-400 transition duration-300">Education</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition duration-300">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-cyan-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Subscribe</h3>
+                    <p class="text-gray-300 mb-4">Subscribe to my newsletter for latest updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your Email" class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-gray-800 text-white border-gray-700 border">
+                        <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold px-4 py-2 rounded-r-md transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2025 Showrav Sarkar. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mt-2">Made with <i class="fas fa-heart text-red-500"></i> by Showrav Sarkar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-cyan-500 text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/new-script.js"></script>
+    <script src="assets/js/profile-image.js"></script>
+    <script src="assets/js/orb-animation.js"></script>
+    <script src="assets/js/particle-effects.js"></script>
+    <script src="assets/js/profile-orb-interaction.js"></script>
+</body>
+</html>
