@@ -1,13 +1,11 @@
 # Portfolio Website
 
-My personal portfolio website showcasing my frontend development skills and projects.
+A personal portfolio website showcasing my frontend development skills, projects, and contact information.
 
-## GitHub Pages
-
-This repository is configured to be published using GitHub Pages at https://showrav-sarkar555.github.io/portfolio/
+## Live Demo
+[GitHub Pages Demo](https://showrav-sarkar555.github.io/portfolio/)
 
 ## Technologies Used
-
 - HTML5
 - CSS3
 - JavaScript
@@ -15,9 +13,24 @@ This repository is configured to be published using GitHub Pages at https://show
 - Three.js
 
 ## Features
-
 - Responsive design
 - Interactive elements
 - Project showcase
 - Contact form
 - Animated profile picture with orbiting elements
+
+## How to Run Locally
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/showrav-sarkar555/portfolio.git
+   ```
+2. Open `index.html` in your browser.
+
+## Folder Structure
+- `assets/css/` - Stylesheets
+- `assets/images/` - Images
+- `assets/js/` - JavaScript files
+- `index.html` - Main HTML file
+
+## License
+This project is licensed under the MIT License.
