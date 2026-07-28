@@ -164,8 +164,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
 
+    const openGmailBtn = document.getElementById('open-gmail-btn');
+    const openMailAppBtn = document.getElementById('open-mail-app-btn');
+
+    if (openGmailBtn) {
+        openGmailBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (this.dataset.url) {
+                window.open(this.dataset.url, '_blank', 'noopener,noreferrer');
+            }
+        });
+    }
+
+    if (openMailAppBtn) {
+        openMailAppBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (this.dataset.url) {
+                const hiddenLink = document.createElement('a');
+                hiddenLink.href = this.dataset.url;
+                hiddenLink.style.display = 'none';
+                document.body.appendChild(hiddenLink);
+                hiddenLink.click();
+                setTimeout(() => {
+                    if (hiddenLink.parentNode) document.body.removeChild(hiddenLink);
+                }, 100);
+            }
+        });
+    }
+
     if (closeToastBtn) {
-        closeToastBtn.addEventListener('click', hideToastModal);
+        closeToastBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            hideToastModal();
+        });
     }
 
     if (toastModal) {
@@ -210,10 +244,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=sarkar.showrav19@gmail.com&su=${mailSubject}&body=${mailBody}`;
 
             // Set action URLs on the modal buttons
-            const openGmailBtn = document.getElementById('open-gmail-btn');
-            const openMailAppBtn = document.getElementById('open-mail-app-btn');
-            if (openGmailBtn) openGmailBtn.href = gmailUrl;
-            if (openMailAppBtn) openMailAppBtn.href = mailtoUrl;
+            const openGmailBtnEl = document.getElementById('open-gmail-btn');
+            const openMailAppBtnEl = document.getElementById('open-mail-app-btn');
+            if (openGmailBtnEl) openGmailBtnEl.dataset.url = gmailUrl;
+            if (openMailAppBtnEl) openMailAppBtnEl.dataset.url = mailtoUrl;
 
             // Trigger default mail client using invisible anchor click
             const hiddenLink = document.createElement('a');
