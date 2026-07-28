@@ -634,20 +634,34 @@
     <div id="toast-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
         <div class="bg-gray-900 border border-cyan-500/40 rounded-2xl p-6 max-w-md w-full mx-4 shadow-[0_0_30px_rgba(6,182,212,0.3)] transform scale-95 transition-transform duration-300" id="toast-content">
             <div class="flex items-center space-x-3 text-cyan-400 mb-4">
-                <i class="fas fa-check-circle text-3xl"></i>
-                <h3 class="text-xl font-bold text-white" id="toast-title">Message Sent!</h3>
+                <i class="fas fa-paper-plane text-3xl"></i>
+                <h3 class="text-xl font-bold text-white" id="toast-title">Send Your Message</h3>
             </div>
             <p class="text-gray-300 mb-6 leading-relaxed text-sm" id="toast-message">
-                Your email client is opening with your message ready to send to Showrav Sarkar.
+                Choose how you'd like to send your message to Showrav Sarkar:
             </p>
+            
+            <!-- Quick Send Action Buttons -->
+            <div class="space-y-3 mb-6">
+                <a href="#" id="open-gmail-btn" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-500 text-white font-semibold py-3 px-4 rounded-xl transition-all flex items-center justify-center space-x-2 shadow-lg">
+                    <i class="fab fa-google text-lg"></i>
+                    <span>Open in Gmail (Web Browser)</span>
+                </a>
+                <a href="#" id="open-mail-app-btn" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-semibold py-3 px-4 rounded-xl transition-all flex items-center justify-center space-x-2 shadow-lg">
+                    <i class="fas fa-envelope text-lg"></i>
+                    <span>Open Default Email App</span>
+                </a>
+            </div>
+
             <div class="bg-gray-800/80 rounded-xl p-3 mb-6 flex items-center justify-between border border-gray-700">
                 <span class="text-cyan-300 font-mono text-sm">sarkar.showrav19@gmail.com</span>
-                <button type="button" class="copy-btn text-xs bg-cyan-500 hover:bg-cyan-400 text-black font-semibold px-3 py-1.5 rounded-lg transition-all" data-copy="sarkar.showrav19@gmail.com">
+                <button type="button" class="copy-btn text-xs bg-gray-700 hover:bg-cyan-500 hover:text-black text-white font-semibold px-3 py-1.5 rounded-lg transition-all" data-copy="sarkar.showrav19@gmail.com">
                     <i class="fas fa-copy mr-1"></i> Copy Email
                 </button>
             </div>
-            <button type="button" id="close-toast" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-2.5 rounded-xl transition-all shadow-lg">
-                Got It, Thanks!
+
+            <button type="button" id="close-toast" class="w-full bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium py-2.5 rounded-xl transition-all border border-gray-700">
+                Close
             </button>
         </div>
     </div>

@@ -202,19 +202,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Build mailto URI
-            const mailtoUrl = "mailto:sarkar.showrav19@gmail.com?subject=" + 
-                encodeURIComponent(`${subject} (from ${name})`) + 
-                "&body=" + 
-                encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            // Build mailto URI and Gmail Web compose URL
+            const mailSubject = encodeURIComponent(`${subject} (from ${name})`);
+            const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            const mailtoUrl = `mailto:sarkar.showrav19@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=sarkar.showrav19@gmail.com&su=${mailSubject}&body=${mailBody}`;
 
-            // Trigger mail client
-            window.location.href = mailtoUrl;
+            // Set action URLs on the modal buttons
+            const openGmailBtn = document.getElementById('open-gmail-btn');
+            const openMailAppBtn = document.getElementById('open-mail-app-btn');
+            if (openGmailBtn) openGmailBtn.href = gmailUrl;
+            if (openMailAppBtn) openMailAppBtn.href = mailtoUrl;
+
+            // Trigger default mail client using invisible anchor click
+            const hiddenLink = document.createElement('a');
+            hiddenLink.href = mailtoUrl;
+            hiddenLink.style.display = 'none';
+            document.body.appendChild(hiddenLink);
+            hiddenLink.click();
+            setTimeout(() => {
+                document.body.removeChild(hiddenLink);
+            }, 100);
 
             // Show Toast feedback modal
             showToastModal(
-                "Opening Email Client...",
-                `Thank you, ${name}! Your default email app is opening with your message ready to send to Showrav Sarkar. You can also copy his email address below.`
+                "Send Your Message",
+                `We attempted to open your email client for Showrav Sarkar. If nothing opened, click "Open in Gmail (Web Browser)" below or copy his email address!`
             );
             
             // Reset the form
