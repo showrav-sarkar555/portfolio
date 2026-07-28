@@ -12,7 +12,7 @@ I am an Undergraduate **Computer Science & Engineering Student at Sylhet Enginee
 
 - **Location:** Uttor Baluchor, Noyabazar, Sylhet, Bangladesh
 - **Email:** `sarkar.showrav19@gmail.com`
-- **Phone:** `01888296045`
+- **Phone / WhatsApp:** `+880 1888296045` ([Chat on WhatsApp](https://wa.me/8801888296045))
 - **LinkedIn:** [showrav-sarkar](https://www.linkedin.com/in/showrav-sarkar)
 - **GitHub:** [showrav-sarkar555](https://github.com/showrav-sarkar555)
 
