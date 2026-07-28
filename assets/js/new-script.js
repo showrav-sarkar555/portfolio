@@ -133,7 +133,50 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', toggleBackToTopButton);
     }
 
-    // Contact form submission
+    // Toast Modal Notification Helpers
+    const toastModal = document.getElementById('toast-modal');
+    const closeToastBtn = document.getElementById('close-toast');
+
+    function showToastModal(title, message) {
+        if (!toastModal) return;
+        const titleEl = document.getElementById('toast-title');
+        const msgEl = document.getElementById('toast-message');
+        if (titleEl) titleEl.textContent = title;
+        if (msgEl) msgEl.textContent = message;
+
+        toastModal.classList.remove('hidden');
+        // Force reflow
+        void toastModal.offsetWidth;
+        toastModal.classList.remove('opacity-0');
+        toastModal.classList.add('opacity-100');
+        const toastContent = document.getElementById('toast-content');
+        if (toastContent) {
+            toastContent.classList.add('animate-toast-pop');
+        }
+    }
+
+    function hideToastModal() {
+        if (!toastModal) return;
+        toastModal.classList.remove('opacity-100');
+        toastModal.classList.add('opacity-0');
+        setTimeout(() => {
+            toastModal.classList.add('hidden');
+        }, 300);
+    }
+
+    if (closeToastBtn) {
+        closeToastBtn.addEventListener('click', hideToastModal);
+    }
+
+    if (toastModal) {
+        toastModal.addEventListener('click', function(e) {
+            if (e.target === toastModal) {
+                hideToastModal();
+            }
+        });
+    }
+
+    // Contact form submission with mailto integration & Toast Modal
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -141,29 +184,116 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
             
             // Simple form validation
             if (!name || !email || !subject || !message) {
-                alert('Please fill out all fields');
+                alert('Please fill out all fields.');
                 return;
             }
             
             // Basic email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
+                alert('Please enter a valid email address.');
                 return;
             }
             
-            // Show success message as alert
-            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+            // Build mailto URI
+            const mailtoUrl = "mailto:sarkar.showrav19@gmail.com?subject=" + 
+                encodeURIComponent(`${subject} (from ${name})`) + 
+                "&body=" + 
+                encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+            // Trigger mail client
+            window.location.href = mailtoUrl;
+
+            // Show Toast feedback modal
+            showToastModal(
+                "Opening Email Client...",
+                `Thank you, ${name}! Your default email app is opening with your message ready to send to Showrav Sarkar. You can also copy his email address below.`
+            );
             
             // Reset the form
             contactForm.reset();
+        });
+    }
+
+    // Copy to Clipboard buttons logic
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const copyText = this.getAttribute('data-copy');
+            if (!copyText) return;
+
+            const updateButtonFeedback = (button) => {
+                const originalHtml = button.innerHTML;
+                button.innerHTML = `<i class="fas fa-check mr-1"></i> Copied!`;
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.innerHTML = originalHtml;
+                    button.classList.remove('copied');
+                }, 2000);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(copyText).then(() => {
+                    updateButtonFeedback(this);
+                }).catch(() => {
+                    fallbackCopyText(copyText, this);
+                });
+            } else {
+                fallbackCopyText(copyText, this);
+            }
+
+            function fallbackCopyText(text, button) {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    updateButtonFeedback(button);
+                } catch (err) {
+                    console.error('Failed to copy text', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        });
+    });
+
+    // Project Category Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterButtons.length > 0 && projectCards.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Set active class
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filterValue = this.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.4s ease';
+                            card.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
     }
 

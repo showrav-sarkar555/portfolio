@@ -249,6 +249,59 @@ input:focus, textarea:focus {
     --accent: #ef4444; /* Red-500 */
 }
 
+/* Glassmorphism & Neon Glow Utilities */
+.glass-card {
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+}
+
+.glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+}
+
+/* Category Filter Button Styles */
+.filter-btn {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn.active {
+    background-color: #06b6d4 !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+    border-color: #06b6d4 !important;
+}
+
+/* Toast Modal & Keyframes */
+@keyframes toastPop {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-toast-pop {
+    animation: toastPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Copy button feedback */
+.copy-btn.copied {
+    background-color: #10b981 !important; /* Emerald green */
+    color: #ffffff !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #home h1 {
@@ -259,3 +312,4 @@ input:focus, textarea:focus {
         font-size: 1.5rem;
     }
 }
+
